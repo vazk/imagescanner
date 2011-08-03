@@ -27,7 +27,19 @@ class ScannerManager(object):
         return self._devices      
 
 class Scanner(object):
-    """Abstract Scanner class"""
+    """Abstract Scanner class.
+
+    In adition to the methods the classes extending this class must also
+    have the following attributes:
+    
+        id: unique identifier for the device on the current machine
+        name: device name
+        manufacturer: device manufacturer
+        description: device description
+
+    Usually all this attributes can be accessed directly on the device. 
+
+    """
 
     def scan(self, dpi=200):
         """Scan a new image using the given DPI and returns a PIL object"""
